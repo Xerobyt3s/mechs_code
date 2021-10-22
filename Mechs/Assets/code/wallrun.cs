@@ -10,6 +10,7 @@ public class wallrun : MonoBehaviour
     [Header("Detection")]
     [SerializeField] private float wallDistance = .5f;
     [SerializeField] private float minimumJumpHeight = 1.5f;
+    [SerializeField] public grapple Grapple;
 
     [Header("Wall Running")]
     [SerializeField] private float wallRunGravity;
@@ -35,7 +36,12 @@ public class wallrun : MonoBehaviour
 
     bool CanWallRun()
     {
-        return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
+        if (!Grapple.isgappeld)
+        {
+            return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
+        } else {
+            return false;
+        }
     }
 
     private void Start()
