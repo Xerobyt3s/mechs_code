@@ -17,13 +17,14 @@ public class grapple : MonoBehaviour
     public bool isgappeld;
 
     [SerializeField] public Rigidbody rb;
+    [SerializeField] KeyCode abilitykey = KeyCode.Mouse2;
         
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse2)) {
+        if (Input.GetKeyDown(abilitykey)) {
             StartGrapple();
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse2)) {
+        else if (Input.GetKeyUp(abilitykey)) {
             StopGrapple();
         }
     }
