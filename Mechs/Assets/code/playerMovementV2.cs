@@ -48,7 +48,7 @@ public class playerMovementV2 : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] Transform groundcheck;
     [SerializeField] LayerMask groundmask;
-    bool isGrounded;
+    public bool isGrounded;
     float grounddistance = 0.2f;
 
     bool crouching = false;
