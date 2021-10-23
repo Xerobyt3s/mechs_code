@@ -18,15 +18,20 @@ public class grapple : MonoBehaviour
 
     [SerializeField] public Rigidbody rb;
     [SerializeField] KeyCode abilitykey = KeyCode.Mouse2;
+    void Update() {
+
         
 
-    void Update() {
+        
         if (Input.GetKeyDown(abilitykey)) {
             StartGrapple();
         }
         else if (Input.GetKeyUp(abilitykey)) {
             StopGrapple();
         }
+
+        
+        
     }
 
     
